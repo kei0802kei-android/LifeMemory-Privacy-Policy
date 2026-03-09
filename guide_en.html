@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeMemory User Guide</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f7f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+            color: white;
+            border-radius: 0 0 20px 20px;
+        }
+        h1 { margin: 0; font-size: 24px; }
+        .update-date { font-size: 12px; opacity: 0.8; }
+        
+        .section { margin-top: 30px; }
+        h2 {
+            color: #5a7d9a;
+            border-left: 5px solid #74EBD5;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+
+        .capture-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .capture-img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 4px solid #fff;
+        }
+
+        .point-box {
+            background-color: #f8fbff;
+            border: 1px solid #e1eef6;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .point-title {
+            font-weight: bold;
+            color: #4a90e2;
+            display: flex;
+            align-items: center;
+        }
+        .point-title::before {
+            content: '💡';
+            margin-right: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LifeMemory User Guide</h1>
+    <div class="update-date">Last Updated: February 2024</div>
+</header>
+
+<div class="container">
+    
+    <div class="section">
+        <h2>Main Screen Overview</h2>
+        <p>When you open the app, your "Today" is recreated in real-time.</p>
+        
+        <div class="capture-container">
+            <img src="ss_main_en.png" alt="Main Screen Capture" class="capture-img">
+            <p style="font-size: 12px; color: #666;">*Screens are under development</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">Living Avatar</div>
+            <p>Your avatar mirrors your actions. If you're listening to music, the avatar wears headphones. If you're walking, the avatar starts walking too.</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">24-Hour Activity Chart</div>
+            <p>The pie chart in the top right shows your daily activity breakdown (Sleep, Music, Steps, Apps) at a glance.</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">Memories Timeline</div>
+            <p>Swipe the center timeline left or right to travel through time. Photos taken at that moment will pop up as "bubbles."</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Activity Cards</h2>
+        <p>Tap the panels below to check detailed data for each category.</p>
+        <div class="grid">
+            <div class="card"><strong>🏃 Steps</strong><br>Sync with Health Connect to track distance and calories burned.</div>
+            <div class="card"><strong>⚖️ Weight</strong><br>Visualize weight trends and track progress toward your goals.</div>
+            <div class="card"><strong>🌙 Sleep</strong><br>Analyze sleep stages (Deep, Light, REM) in detail.</div>
+            <div class="card"><strong>📱 Digital Well-being</strong><br>Check how much time you spend on SNS and media apps.</div>
+            <div class="card"><strong>📖 AI Diary</strong><br>Gemini AI reflects on your day and writes a gentle diary entry for you.</div>
+        </div>
+    </div>
+
+    <div class="section" style="text-align: center;">
+        <p>Reflecting on your past self<br>makes your tomorrow even brighter.</p>
+        <p><strong>LifeMemory</strong></p>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 kei0802kei-android<br>
+    <a href="https://kei0802kei-android.github.io/LifeMemory-Privacy-Policy/" style="color: #888;">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
