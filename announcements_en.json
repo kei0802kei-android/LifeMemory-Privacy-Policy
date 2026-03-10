@@ -1,48 +1,7 @@
 [
-  {
-    "id": "20260310_06",
-    "title": "Automatic Announcement Display Added",
-    "body": "Unread announcements will now be displayed automatically when the app starts.",
-    "date": "2026/03/10",
-    "category": "update",
-    "url": ""
-  },
-  {
-    "id": "20260310_05",
-    "title": "Version Information Added",
-    "body": "You can now check the app version details in the side menu.",
-    "date": "2026/03/10",
-    "category": "info",
-    "url": ""
-  },
-  {
-    "id": "20260310_04",
-    "title": "Enhanced Announcement Features",
-    "body": "Added a new indicator on the home screen so you never miss an update.",
-    "date": "2026/03/10",
-    "category": "update",
-    "url": ""
-  },
-  {
-    "id": "20260310_03",
-    "title": "Important Update Notice",
-    "body": "Fixed the issue where the app would crash.",
-    "date": "2026/03/10",
-    "category": "important",
-    "url": ""
-  },
-  {
-    "id": "20260310_02",
-    "title": "Latest Update Notice",
-    "body": "Added a new User Guide to help you get started.",
-    "date": "2026/03/10",
-    "category": "update",
-    "url": ""
-  },
-  {
-    "id": "20260310_01",
-    "title": "Announcements Feature Added",
-    "body": "You can now check the latest news and updates directly from the app.",
+  {    "id": "20260310_01",
+    "title": "Beta Version Released",
+    "body": "The beta version for closed testing has been officially released.",
     "date": "2026/03/10",
     "category": "info",
     "url": ""
