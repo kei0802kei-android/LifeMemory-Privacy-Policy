@@ -1,5 +1,13 @@
 [
   {
+    "id": "20260310_06",
+    "title": "Automatic Announcement Display Added",
+    "body": "Unread announcements will now be displayed automatically when the app starts.",
+    "date": "2026/03/10",
+    "category": "update",
+    "url": ""
+  },
+  {
     "id": "20260310_05",
     "title": "Version Information Added",
     "body": "You can now check the app version details in the side menu.",
