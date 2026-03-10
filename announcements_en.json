@@ -1,0 +1,26 @@
+[
+  {
+    "id": "20260310_03",
+    "title": "Important Update Notice",
+    "body": "Fixed the issue where the app would crash.",
+    "date": "2026/03/10",
+    "category": "important",
+    "url": ""
+  },
+  {
+    "id": "20260310_02",
+    "title": "Latest Update Notice",
+    "body": "Added a new User Guide to help you get started.",
+    "date": "2026/03/10",
+    "category": "update",
+    "url": ""
+  },
+  {
+    "id": "20260310_01",
+    "title": "Announcements Feature Added",
+    "body": "You can now check the latest news and updates directly from the app.",
+    "date": "2026/03/10",
+    "category": "info",
+    "url": ""
+  }
+]
