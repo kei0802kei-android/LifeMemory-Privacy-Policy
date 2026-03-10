@@ -1,5 +1,13 @@
 [
-    {
+  {
+    "id": "20260310_05",
+    "title": "Version Information Added",
+    "body": "You can now check the app version details in the side menu.",
+    "date": "2026/03/10",
+    "category": "info",
+    "url": ""
+  },
+  {
     "id": "20260310_04",
     "title": "Enhanced Announcement Features",
     "body": "Added a new indicator on the home screen so you never miss an update.",
