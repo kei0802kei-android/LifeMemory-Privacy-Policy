@@ -3,88 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeMemory お詫び・プレゼント配布システム 運用マニュアル</title>
+    <title>LifeMemory お詫び・プレゼント配布マニュアル</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #2980b9; margin-top: 30px; }
-        code { background-color: #eee; padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', Courier, monospace; }
-        pre { background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        .note { background-color: #fff3cd; border-left: 5px solid #ffecb5; padding: 15px; margin: 20px 0; border-radius: 0 5px 5px 0; }
-        .important { background-color: #f8d7da; border-left: 5px solid #f5c6cb; padding: 15px; margin: 20px 0; border-radius: 0 5px 5px 0; }
-        .tag { display: inline-block; background: #3498db; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; margin-right: 5px; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; padding: 30px; background-color: #ffffff; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #3498db; padding-left: 15px; }
+        h3 { color: #34495e; margin-top: 25px; }
+        
+        /* ① コードブロックの改善：人間の目に見やすく */
+        pre { 
+            background-color: #f8f9fa; /* 明るいグレー */
+            color: #212529;           /* 濃いグレー（ほぼ黒） */
+            padding: 20px; 
+            border: 1px solid #dee2e6; 
+            border-radius: 8px; 
+            overflow-x: auto; 
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        code { color: #d63384; font-weight: bold; } /* インラインコード */
+        pre code { color: inherit; font-weight: normal; } /* ブロック内コード */
+
+        .note { background-color: #e7f3fe; border-left: 5px solid #2196F3; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .important { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .danger { background-color: #f8d7da; border-left: 5px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #fff; }
+        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        th { background-color: #f1f3f5; color: #495057; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        
+        .property-name { font-family: monospace; font-weight: bold; color: #0056b3; }
+        .type-tag { font-size: 0.85em; background: #e9ecef; padding: 2px 6px; border-radius: 4px; color: #6c757d; }
     </style>
 </head>
 <body>
 
 <h1>🎁 お詫び・プレゼント配布システム 運用マニュアル</h1>
-<p>アプリのアップデート（ビルド）を行うことなく、GitHub上の <code>announcements.json</code> を書き換えるだけでユーザーにAIクレジットを配布する仕組みの解説です。</p>
+<p>ビルド（アプリアップデート）を通さずに、GitHub上の <code>announcements.json</code> を更新するだけで、ユーザーにAIクレジットを配布する方法を解説します。</p>
 
-<h2>1. 配信の仕組み</h2>
+<h2>1. 配信の基本ルール</h2>
 <ul>
-    <li>アプリ起動時に指定のURLからJSONを取得します。</li>
-    <li>前回のチェック以降に追加された「未読」のお知らせをすべてスキャンします。</li>
-    <li>お知らせに <code>giftCredits</code> が設定されている場合、自動的にユーザーのクレジットに加算します。</li>
+    <li>アプリは起動時にJSONを読み込み、<strong>「未読のお知らせ」</strong>を上から順にスキャンします。</li>
+    <li><code>giftCredits</code> が見つかると、自動的にクレジットを加算します。</li>
+    <li>一度加算されたお知らせは、既読にする前でもDBに記録されるため、再起動しても<strong>二重配布されません</strong>。</li>
 </ul>
 
-<h2>2. JSONの書き方</h2>
-<p>GitHubの <code>announcements.json</code> の <strong>リストの一番上</strong> に新しい要素を追加してください。</p>
+<div class="danger">
+    <strong>⚠️ 最重要：最新のお知らせは必ず一番上に追加してください</strong><br>
+    アプリは上から順に読み、前回保存した最新のIDに到達した時点でスキャンを終了します。古い情報の ID を書き換えても反応しません。
+</div>
 
-<h3>全員に配布する場合</h3>
+<h2>2. JSONの記述例</h2>
+
+<h3>パターンA：全員に配布（お詫びなど）</h3>
 <pre><code>[
   {
-    "id": "20260320_fix",
+    "id": "20260320_fix_apology",
     "title": "同期不具合のお詫び",
-    "body": "ご迷惑をおかけしました。お詫びとして5クレジット付与します。",
+    "body": "不具合のお詫びとして、AIクレジットを5つ付与しました。",
     "date": "2026/03/20",
     "category": "important",
     "giftCredits": 5
   }
 ]</code></pre>
 
-<h3>特定のユーザーだけに配布する場合</h3>
-<p>お問い合わせをくれたユーザーのID（スライドメニューに表示）を指定します。</p>
-<pre><code>{
-  "id": "20260320_support_A",
-  "title": "個別補填のお知らせ",
-  "body": "お問い合わせの件につきまして、10クレジットを付与しました。",
-  "date": "2026/03/20",
-  "category": "info",
-  "giftCredits": 10,
-  "targetIds": ["A1B2C3D4"]
-}</code></pre>
+<h3>パターンB：特定ユーザーのみに配布（個別補填など）</h3>
+<p>スライドメニューに表示される8桁のIDを指定します。複数のユーザーを指定することも可能です。</p>
+<pre><code>[
+  {
+    "id": "20260320_compensation_01",
+    "title": "個別補填のお知らせ",
+    "body": "お問い合わせの件について、補填のクレジットを付与しました。",
+    "date": "2026/03/20",
+    "category": "info",
+    "giftCredits": 10,
+    "targetIds": ["A1B2C3D4", "E5F6G7H8"]
+  }
+]</code></pre>
 
-<h2>3. 運用上の重要なルール</h2>
-
-<div class="important">
-    <strong>⚠️ 最新のお知らせは必ず一番上（インデックス0）に追加してください。</strong><br>
-    アプリは上から順に読み込み、既読のIDを見つけた時点でスキャンを終了します。
-</div>
-
-<div class="important">
-    <strong>⚠️ ID（id）は必ずユニークな文字列にしてください。</strong><br>
-    以前と同じIDを使うと、アプリが「既に読んだ」と判断してプレゼントが配布されません。
-</div>
-
+<h2>3. 付与の制限事項</h2>
 <div class="note">
-    <strong>🛡️ 二重配布の防止機能</strong><br>
-    お知らせを閉じる前にアプリを再起動しても、DB側に「処理済みID」を記録しているため、同じお知らせから二度クレジットが増えることはありません。
+    <strong>合計10クレジットの上限チェック</strong><br>
+    アプリ内の最大保持数は10回です。<code>現在のクレジット + プレゼント数</code> が10を超える場合、付与は保留されます。ユーザーがクレジットを消費して空きができた後、次回のアプリ起動時に自動で付与が再試行されます。
 </div>
 
-<div class="note">
-    <strong>📊 合計10クレジットの制限</strong><br>
-    配布時に <code>現在の残数 + プレゼント数</code> が10を超える場合、付与は保留されます。ユーザーがクレジットを消費して空きができた後の次回起動時に、自動で付与が実行されます。
-</div>
+<h2>4. JSON全項目リファレンス</h2>
+<p><code>announcements.json</code> で使用可能なすべての項目と説明です。</p>
 
-<h2>4. ユーザーIDの確認方法</h2>
-<p>特定ユーザーへの配布に必要なIDは、以下の場所でユーザーに確認してもらってください。</p>
-<ul>
-    <li>アプリトップ画面 ＞ 左上のメニュー（三本線）をタップ</li>
-    <li>スライドメニューの <strong>一番下</strong> に表示されている <code>ID：XXXXXXXX</code></li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>項目名</th>
+            <th>型</th>
+            <th>説明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="property-name">id</td>
+            <td><span class="type-tag">String</span></td>
+            <td><strong>必須。</strong> お知らせを識別する一意のID。日付+連番などを推奨。以前と同じIDを使うと配信されません。</td>
+        </tr>
+        <tr>
+            <td class="property-name">title</td>
+            <td><span class="type-tag">String</span></td>
+            <td><strong>必須。</strong> お知らせのタイトル。ポップアップやリストに表示されます。</td>
+        </tr>
+        <tr>
+            <td class="property-name">body</td>
+            <td><span class="type-tag">String</span></td>
+            <td><strong>必須。</strong> お知らせの本文。お詫びの内容などを記載します。</td>
+        </tr>
+        <tr>
+            <td class="property-name">date</td>
+            <td><span class="type-tag">String</span></td>
+            <td><strong>必須。</strong> 表示用の日付（例: "2026/03/20"）。</td>
+        </tr>
+        <tr>
+            <td class="property-name">category</td>
+            <td><span class="type-tag">String</span></td>
+            <td><strong>必須。</strong> <code>info</code> (青), <code>update</code> (緑), <code>important</code> (赤) のいずれかを指定。</td>
+        </tr>
+        <tr>
+            <td class="property-name">giftCredits</td>
+            <td><span class="type-tag">Number</span></td>
+            <td>任意。付与するAIクレジット数。1〜10の数値を指定してください。</td>
+        </tr>
+        <tr>
+            <td class="property-name">targetIds</td>
+            <td><span class="type-tag">Array</span></td>
+            <td>任意。特定のユーザーのみに配る場合のIDリスト（例: <code>["ID1", "ID2"]</code>）。省略または <code>null</code> で全員配布。</td>
+        </tr>
+        <tr>
+            <td class="property-name">url</td>
+            <td><span class="type-tag">String</span></td>
+            <td>任意。詳細な説明がある場合の外部リンクURL。</td>
+        </tr>
+    </tbody>
+</table>
 
-<hr>
-<p style="text-align: center; color: #95a5a6; font-size: 0.8em;">LifeMemory Operation System - Generated by AI Assistant</p>
+<hr style="margin-top: 50px; border: 0; border-top: 1px solid #eee;">
+<p style="text-align: center; color: #95a5a6; font-size: 0.85em;">
+    LifeMemory Admin System | 2026 Keikei.
+</p>
 
 </body>
 </html>
