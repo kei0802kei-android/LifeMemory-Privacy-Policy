@@ -18,7 +18,7 @@
         h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #3498db; padding-left: 15px; }
         h3 { color: #34495e; margin-top: 25px; }
         
-        /* ① コードブロックの改善：白背景に黒文字で見やすく */
+        /* ① コードブロックの改善：人間の目に見やすく（白背景・黒文字） */
         pre { 
             background-color: #ffffff; 
             color: #212529; 
@@ -51,46 +51,65 @@
 <body>
 
 <h1>🎁 お詫び・プレゼント配布システム 運用マニュアル</h1>
-<p>ビルド（アプリアップデート）を通さずに、GitHub上の <code>announcements.json</code> を更新するだけで、ユーザーにAIクレジットを配布する方法を解説します。</p>
+<p>ビルドを通さずに、GitHub上の <code>announcements.json</code> を更新するだけで、ユーザーにAIクレジットを配布する方法を解説します。</p>
 
 <h2>1. 配布の基本ルール</h2>
 <ul>
     <li>アプリは起動時にJSONを読み込み、<strong>「未読のお知らせ」</strong>を上から順にスキャンします。</li>
     <li><code>giftCredits</code> が設定されている場合、対象ユーザーへ自動的にクレジットを加算します。</li>
-    <li>一度加算されたお知らせは、既読にする前でもDBに記録されるため、再起動しても<strong>二重配布されません</strong>。</li>
+    <li>一度加算されたお知らせは、DBに記録されるため、再起動しても<strong>二重配布されません</strong>。</li>
 </ul>
 
 <div class="danger">
     <strong>⚠️ 最重要：最新のお知らせは必ずリストの「一番上」に追加してください</strong><br>
-    アプリは上から順に読み、前回保存した最新のID（最後に読んだID）に到達した時点でスキャンを終了します。古い情報の ID を書き換えても反応しません。
+    アプリは上から順に読み、前回読んだ最新のIDに到達した時点でスキャンを終了します。下の方に新着を追加しても無視されます。
 </div>
 
 <h2>2. JSONの記述例</h2>
 
-<h3>パターンA：全員に配布（お詫びなど）</h3>
+<h3>パターンA：全員に一斉配布</h3>
 <pre><code>[
   {
-    "id": "20260320_apology_01",
-    "title": "【重要】同期不具合のお詫び",
-    "body": "同期が正常に行われない不具合が発生しておりました。お詫びとしてAIクレジットを5つ付与いたしました。",
+    "id": "20260320_apology_all",
+    "title": "同期不具合のお詫び",
+    "body": "不具合のお詫びとしてAIクレジットを5つ付与しました。",
     "date": "2026/03/20",
     "category": "important",
-    "giftCredits": 5,
-    "url": ""
+    "giftCredits": 5
   }
 ]</code></pre>
 
-<h3>パターンB：特定のユーザーにのみ配布（個別補填など）</h3>
-<p>スライドメニューの一番下に表示される8桁のIDを <code>targetIds</code> に記述します。</p>
+<h3>パターンB：特定の複数ユーザーに配布</h3>
+<p>スライドメニューのIDを指定します。複数をカンマ区切りで指定可能です。</p>
 <pre><code>[
   {
-    "id": "20260320_compensation_A",
+    "id": "20260320_compensation_A_B",
     "title": "個別補填のお知らせ",
-    "body": "不具合のご報告ありがとうございます。補填の10クレジットを付与しました。",
+    "body": "お問い合わせの件について、10クレジットを付与しました。",
     "date": "2026/03/20",
     "category": "info",
     "giftCredits": 10,
-    "targetIds": ["A1B2C3D4"]
+    "targetIds": ["A1B2C3D4", "E5F6G7H8"]
+  }
+]</code></pre>
+
+<h3>パターンC：お知らせを「追加」する場合（カンマ区切り）</h3>
+<p>すでにお知らせがある場合、<strong>一番上の <code>{ }</code> の後ろにカンマ <code>,</code> を打って</strong>、新しい <code>{ }</code> をその上に配置します。</p>
+<pre><code>[
+  {
+    "id": "20260321_new_info",
+    "title": "新しいお知らせ",
+    "body": "これが一番上に表示され、プレゼント対象になります。",
+    "date": "2026/03/21",
+    "category": "info",
+    "giftCredits": 1
+  },
+  {
+    "id": "20260320_apology_all",
+    "title": "古いお知らせ",
+    "body": "カンマで区切って下に追加されていきます。",
+    "date": "2026/03/20",
+    "category": "important"
   }
 ]</code></pre>
 
@@ -98,7 +117,7 @@
 
 <div class="note">
     <strong>🛡️ 二重配布の防止</strong><br>
-    お知らせポップアップを閉じる前にアプリを落としたとしても、クレジット付与自体は「付与した瞬間」にDB（Metaテーブル）へ <code>LAST_GIFT_PROCESSED_ID</code> として記録されます。そのため、同じお詫びを二度受け取ることはありません。
+    クレジット付与は「JSONを読み込んだ瞬間」にDBへ <code>LAST_GIFT_PROCESSED_ID</code> として記録されます。そのため、ポップアップを閉じる前にアプリを落としても、二度受け取ることはありません。
 </div>
 
 <div class="important">
@@ -107,8 +126,6 @@
 </div>
 
 <h2>4. JSON全項目リファレンス</h2>
-<p><code>announcements.json</code> の各項目の詳細説明です。</p>
-
 <table>
     <thead>
         <tr>
@@ -121,53 +138,49 @@
         <tr>
             <td class="property-name">id</td>
             <td><span class="type-tag">String</span></td>
-            <td><strong>必須。</strong> お知らせを識別する一意のID。日付+連番などを推奨。以前と同じIDを使うと配信されません。</td>
+            <td><strong>必須。</strong> 一意のID。以前と同じIDを使うと配信されません。</td>
         </tr>
         <tr>
             <td class="property-name">title</td>
             <td><span class="type-tag">String</span></td>
-            <td><strong>必須。</strong> お知らせのタイトル。ポップアップやリストに太字で表示されます。</td>
+            <td><strong>必須。</strong> お知らせのタイトル。</td>
         </tr>
         <tr>
             <td class="property-name">body</td>
             <td><span class="type-tag">String</span></td>
-            <td><strong>必須。</strong> お知らせの本文。お詫びの内容などを簡潔に記載します。</td>
+            <td><strong>必須。</strong> お知らせの本文。</td>
         </tr>
         <tr>
             <td class="property-name">date</td>
             <td><span class="type-tag">String</span></td>
-            <td><strong>必須。</strong> 表示用の日付。形式は自由ですが <code>yyyy/MM/dd</code> 形式を推奨します。</td>
+            <td><strong>必須。</strong> 表示用の日付（例: "2026/03/20"）。</td>
         </tr>
         <tr>
             <td class="property-name">category</td>
             <td><span class="type-tag">String</span></td>
-            <td><strong>必須。</strong> 以下のいずれかを指定：<br>
-                ・<code>info</code> : 青色（一般告知）<br>
-                ・<code>update</code> : 緑色（アップデート）<br>
-                ・<code>important</code> : 赤色（お詫び・重要事項）
-            </td>
+            <td><strong>必須。</strong> <code>info</code>, <code>update</code>, <code>important</code> のいずれか。</td>
         </tr>
         <tr>
             <td class="property-name">giftCredits</td>
             <td><span class="type-tag">Number</span></td>
-            <td>任意。付与するAIクレジット数。指定しない場合は 0 とみなされます。</td>
+            <td>任意。付与するAIクレジット数。指定しない場合は 0。</td>
         </tr>
         <tr>
             <td class="property-name">targetIds</td>
             <td><span class="type-tag">Array</span></td>
-            <td>任意。特定のユーザーにのみ配る場合のIDリスト（例: <code>["ID1", "ID2"]</code>）。<br>省略または <code>null</code> の場合は全員へ配布されます。</td>
+            <td>任意。IDリスト（例: <code>["ID1", "ID2"]</code>）。省略で全員配布。</td>
         </tr>
         <tr>
             <td class="property-name">url</td>
             <td><span class="type-tag">String</span></td>
-            <td>任意。詳細な説明がある場合の外部リンクURL。お知らせをタップするとブラウザで開きます。</td>
+            <td>任意。詳細ページがある場合のURL。</td>
         </tr>
     </tbody>
 </table>
 
 <hr style="margin-top: 60px; border: 0; border-top: 1px solid #eee;">
 <p style="text-align: center; color: #95a5a6; font-size: 0.85em;">
-    LifeMemory Admin System | 2026 Keikei.
+    LifeMemory Operation System | 2026 Keikei.
 </p>
 
 </body>
