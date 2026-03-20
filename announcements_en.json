@@ -1,7 +1,16 @@
 [
-  {    "id": "20260311_01",
+  {
+    "id": "20260320_02",
+    "title": "Notification of Test Compensation",
+    "body": "Credits have been granted as compensation for testing.",
+    "date": "2026/03/20",
+    "category": "info",
+    "giftCredits": 1
+  },
+  {
+    "id": "20260311_01",
     "title": "Beta Version Released",
-    "body": "The beta version for closed testing has been officially released.",
+    "body": "The beta version for closed testing has been released.",
     "date": "2026/03/11",
     "category": "info",
     "url": ""
