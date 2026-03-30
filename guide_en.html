@@ -87,90 +87,141 @@
             font-size: 12px;
             color: #888;
         }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #9FACE6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>LifeMemory User Guide</h1>
-    <div class="update-date">Last Updated: February 2026</div>
+    <div class="update-date">Last Updated: March 2026</div>
 </header>
 
 <div class="container">
-    
+
+    <!-- Section: Preparation -->
     <div class="section">
-        <h2>Main Screen Overview</h2>
-        <p>When you open the app, your "Today" is recreated in real-time.</p>
+        <h2>Before You Start</h2>
+        <p>To get the most out of LifeMemory, please ensure the following permissions are granted.</p>
+        
+        <div class="point-box">
+            <div class="point-title">Health Connect Integration</div>
+            <p>Required to sync "Steps," "Sleep," and "Weight." Allowing "All Permissions" ensures seamless integration with apps like Google Fit.</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">Usage Access</div>
+            <p>Required for the "Entertainment" card to track app usage time. Please find LifeMemory in your Android settings and toggle "Allow."</p>
+        </div>
+    </div>
+    
+    <!-- Section: Main Screen -->
+    <div class="section">
+        <h2>Using the Main Screen</h2>
+        <p>When you open the App, your "Today" is recreated in real-time.</p>
         
         <div class="capture-container">
-            <img src="main_screen_en.png" alt="Main Screen Capture" class="capture-img">
-            <p style="font-size: 12px; color: #666;">*Screens are under development</p>
+            <img src="main_screen.png" alt="Main Screen Capture" class="capture-img">
+            <p style="font-size: 12px; color: #666;">*UI is subject to change</p>
         </div>
 
         <div class="point-box">
-            <div class="point-title">Living Avatar</div>
-            <p>Your avatar mirrors your actions. If you're listening to music, the avatar wears headphones. If you're walking, the avatar starts walking too.</p>
+            <div class="point-title">Animated Avatar!</div>
+            <p>If you're listening to music, your avatar wears headphones. If you're walking, the avatar walks too. Expressions change based on your actions.</p>
         </div>
 
         <div class="point-box">
-            <div class="point-title">24-Hour Activity Chart</div>
-            <p>The pie chart in the top right shows your daily activity breakdown (Sleep, Music, Steps, Apps) at a glance.</p>
+            <div class="point-title">24-Hour Activity Graph</div>
+            <p>The circular chart at the top-right visually represents your daily activity (Sleep, Music, Walking, App Usage). See where your time goes at a glance.</p>
         </div>
 
         <div class="point-box">
-            <div class="point-title">Memories Timeline</div>
-            <p>Swipe the center timeline left or right to travel through time. Photos taken at that moment will pop up as "bubbles."</p>
+            <div class="point-title">Memory Timeline</div>
+            <p>Swipe left or right on the central timeline to travel back in time. Photos taken at that moment pop up as "speech bubbles."</p>
         </div>
     </div>
 
+    <!-- Section: Activity Cards -->
     <div class="section">
         <h2>Activity Cards</h2>
-        <p>Tap the panels below to view detailed data for each activity.</p>
+        <p>Tap the panels below to view detailed data for each category.</p>
         <div class="grid">
-            <div class="card"><strong>🔥 Calories</strong><br>Estimates calories burned based on activity and profile, displaying target intake.</div>
-            <div class="card"><strong>🏃 Steps</strong><br>Integrates with Health Connect to record daily walking distance and calories.</div>
-            <div class="card"><strong>⚖️ Weight</strong><br>Visualizes weight changes and supports your journey toward goals.</div>
-            <div class="card"><strong>🌙 Sleep</strong><br>Detailed analysis of last night's sleep stages (deep, light, etc.).</div>
-            <div class="card"><strong>📱 Entertainment</strong><br>Check your digital wellbeing by seeing how much time you spent on apps.</div>
-            <div class="card"><strong>📖 Diary</strong><br>Gemini AI reflects on your day and writes a gentle diary entry for you.</div>
-            <div class="card"><strong>🏆 Collection</strong><br>View your earned achievements and all-time personal best records (Hall of Fame).</div>
-            <div class="card"><strong>📊 Report</strong><br>AI-driven analysis and a detailed review of how you spent your time.</div>
+            <div class="card"><strong>🔥 Calories</strong><br>Estimates calories burned based on activity and profile.</div>
+            <div class="card"><strong>🏃 Steps</strong><br>Syncs with Health Connect to record distance and daily steps.</div>
+            <div class="card"><strong>⚖️ Weight</strong><br>Visualize weight trends with graphs to stay on track.</div>
+            <div class="card"><strong>🌙 Sleep</strong><br>Analyzes sleep stages (Deep, Light) from the previous night.</div>
+            <div class="card"><strong>📱 Entertainment</strong><br>Monitor your digital well-being by checking app usage time.</div>
+            <div class="card"><strong>📖 Diary</strong><br>Gemini AI reflects on your day and writes a personal diary for you.</div>
+            <div class="card"><strong>🏆 Collection</strong><br>Check your earned titles and all-time personal records.</div>
+            <div class="card"><strong>📊 Report</strong><br>A detailed AI-driven analysis of how you spent your time.</div>
         </div>
     </div>
 
+    <!-- Section: Custom Events -->
     <div class="section">
         <h2>Recording Custom Events</h2>
-        <p>In addition to digital logs, you can also record your "real-life activities" on the timeline. *Tap the timeline to register.</p>
+        <p>Beyond digital logs, you can manually record "real-life actions" on the timeline. *Tap the timeline to register.</p>
         
         <div class="capture-container">
-            <img src="event_en.png" alt="Event Registration Screen" class="capture-img">
+            <img src="event.png" alt="Event Entry Screen" class="capture-img">
         </div>
-    
+
         <div class="point-box">
-            <div class="point-title">Easy Input with Quick Selection</div>
-            <p>For common events like meals, work, exercise, or travel, simply tap the icon. You can also use your favorite emojis in the details.</p>
+            <div class="point-title">Quick Selection</div>
+            <p>Easily log common events like Meals, Work, or Exercise by tapping icons. You can also use your favorite emojis!</p>
         </div>
-    
+
         <div class="point-box">
-            <div class="point-title">Color Your Timeline</div>
-            <p>Registered events appear as colored bars on the timeline. This gives you an intuitive view of what you were doing and for how long when swiping back through your day.</p>
+            <div class="point-title">Coloring the Timeline</div>
+            <p>Registered events appear as colored bands on the timeline, making it easy to see what you were doing at any time.</p>
         </div>
-    
+
         <div class="point-box">
-            <div class="point-title">Routine Tasks</div>
-            <p>For daily routines like "Work" or "Sleep," turning on "Routine Task" will automatically display the event on your timeline for the following days.</p>
+            <div class="point-title">Recurring Tasks</div>
+            <p>For daily routines like "Work" or "Sleep," enable "Recurring Tasks" to automatically display them on future timelines.</p>
         </div>
     </div>
-    
+
+    <!-- Section: AI Tips -->
+    <div class="section">
+        <h2>Tips for Better AI Diaries</h2>
+        <div class="point-box">
+            <div class="point-title">Record the "Small Things"</div>
+            <p>The more events you register—like "Had a great lunch" or "Went for a walk"—the more specific and emotional the AI-generated diary becomes.</p>
+        </div>
+    </div>
+
+    <!-- Section: Privacy & Backup -->
+    <div class="section">
+        <h2>Keeping Your Memories Safe</h2>
+        <div class="point-box">
+            <div class="point-title">Data Stays Local</div>
+            <p>Your diaries and health data are stored only on your device. Your privacy is fully protected and never leaked to external servers.</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">Backup (JSON Export)</div>
+            <p>You can save your records as a JSON file via Settings. We recommend regular backups for device changes or peace of mind.</p>
+        </div>
+    </div>
+
+</div>
+
     <div class="section" style="text-align: center;">
         <p>Reflecting on your past self<br>makes your tomorrow even brighter.</p>
         <p><strong>LifeMemory</strong></p>
     </div>
 
-</div>
-
 <footer>
-    &copy; 2026 kei0802kei-android<br>
+    &copy; 2026 LifeMemory<br>
     <a href="https://kei0802kei-android.github.io/LifeMemory-Privacy-Policy/" style="color: #888;">Privacy Policy</a>
 </footer>
 
