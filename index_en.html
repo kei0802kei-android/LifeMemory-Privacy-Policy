@@ -7,79 +7,69 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
         h1 { border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
-        h2 { color: #4CAF50; margin-top: 30px; }
+        h2 { color: #4CAF50; margin-top: 30px; border-left: 5px solid #4CAF50; padding-left: 10px; }
         p, li { font-size: 14px; }
-        .footer { margin-top: 50px; font-size: 12px; color: #777; }
+        .important { color: #d32f2f; font-weight: bold; }
+        .footer { margin-top: 50px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
 
     <h1>Privacy Policy</h1>
-    <p>"LifeMemory" (hereinafter referred to as "this App") respects your privacy and is committed to protecting your personal information.</p>
+    <p>"LifeMemory" (hereinafter referred to as "the App") respects your privacy and is committed to protecting your personal information. By using the App, you agree to the terms of this policy.</p>
 
-    <h2>1. Information Collected and Purpose of Use</h2>
-    <p>This App collects the following information for the purposes stated below:</p>
+    <h2>1. Information Collection and Purpose of Use</h2>
+    <p>The App collects the following information for the purposes described below:</p>
     <ul>
-        <li><strong>Activity Data (steps, calories, etc.) and Sleep Data:</strong> Obtained from Health Connect. This data is used solely to visualize your activity history and display it as a life log within the App.</li>
-        <li><strong>Media Files (Photos and Videos):</strong> Accessed from your device's storage. This is used to display your memories within the App's "timeline bubble" feature.</li>
-        <li><strong>App Usage Statistics:</strong> Collected to analyze your app usage patterns and display them as part of your digital footprint in the life log.</li>
+        <li><strong>Healthcare Data (Steps, Sleep, Weight, Calories, etc.):</strong> Obtained via Health Connect. This data is used solely to visualize your activity history and display it as a life log within the App.</li>
+        <li><strong>Media Files (Photos and Videos):</strong> Accessed to display visual memories within the App's diary and reflection features.</li>
+        <li><strong>App Usage Statistics:</strong> Obtained through "Usage Access" permissions. This is used to analyze your app usage patterns and display them as part of your life log.</li>
+        <li><strong>AI Processing Data:</strong> When using AI-powered analysis or diary generation features (via Gemini), the text prompts and certain statistical data you provide are processed on cloud servers.</li>
     </ul>
 
-    <h2>2. Handling of Health Connect Data</h2>
-    <p>This App uses information obtained from Health Connect in accordance with the Health Connect Permissions policy, including the <a href="https://support.google.com/googleplay/android-developer/answer/9888170" target="_blank">Limited Use requirements</a>.</p>
-    <ul>
-        <li>Data obtained from Health Connect is never used for purposes other than providing and improving App features. It is never used for advertising or sold to third parties.</li>
-    </ul>
-
-    <h2>3. Data Storage and Third-Party Disclosure</h2>
-    <p>All data collected by this App (health data, photos, usage statistics, etc.) is <strong>stored locally on your device only.</strong> We do not transmit this data to any external servers managed by us, nor do we provide it to any third parties.</p>
-
-    <h2>4. Disclaimer</h2>
-    <p>The developer shall not be held responsible for any trouble, loss, or damage resulting from the use of this App. This App is provided on an "as is" basis.</p>
-
-    <h2>5. Open Source Licenses</h2>
-    <p>This App uses the following open-source libraries. We acknowledge the copyrights and provide license information in accordance with each library's terms.</p>
-    <ul>
-        <li><strong>Android Jetpack (Compose, Room, DataStore, Health Connect, etc.):</strong> Apache License 2.0</li>
-        <li><strong>Google Firebase (Analytics, Crashlytics):</strong> Apache License 2.0</li>
-        <li><strong>Google Play Services (Ads, Review, App Update):</strong> Android Software Development Kit License</li>
-        <li><strong>Google Media3 (ExoPlayer):</strong> Apache License 2.0</li>
-        <li><strong>Google Generative AI SDK (Gemini):</strong> Apache License 2.0</li>
-        <li><strong>Coil (Image Loading):</strong> Apache License 2.0</li>
-        <li><strong>Gson:</strong> Apache License 2.0</li>
-    </ul>
-
-    <div class="section">
-        <h2>Recording Custom Events</h2>
-        <p>In addition to automatic digital logs, you can manually record your "real-life actions" on the timeline.</p>
-        
-        <div class="capture-container">
-            <img src="event.png" alt="Event Registration Screen" class="capture-img">
-        </div>
-
-        <div class="point-box">
-            <div class="point-title">Quick Selection for Easy Input</div>
-            <p>Just tap an icon for common events like meals, work, exercise, or travel. You can also include your favorite emojis in the description.</p>
-        </div>
-
-        <div class="point-box">
-            <div class="point-title">Vibrant Timeline Labels</div>
-            <p>Registered events appear as color-coded bands on the timeline. It helps you see at a glance what you were doing when you swipe back through your day.</p>
-        </div>
-
-        <div class="point-box">
-            <div class="point-title">Recurring Tasks</div>
-            <p>For daily routines like "Work" or "Sleep," turn on "Recurring Task" to have them automatically appear on the timeline for subsequent days.</p>
-        </div>
-    </div>
+    <h2>2. Third-Party Services</h2>
+    <p>For quality improvement and ad delivery, the App utilizes the following third-party services. These services may collect information using cookies or device identifiers.</p>
     
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
-    <p>Email: [ lifememory.keikei@gmail.com ]</p>
-    <p>Developer: [ keikei ]</p>
+    <ul>
+        <li><strong>Google AdMob (Ad Delivery):</strong> Uses information such as the Advertising ID to display and personalize advertisements.</li>
+        <li><strong>Firebase Analytics / Crashlytics (Analysis & Improvement):</strong> Collects anonymous usage statistics and diagnostic information to help improve the App's performance and stability.</li>
+        <li><strong>Google Generative AI SDK (Gemini):</strong> Processes information sent as prompts to generate AI content.</li>
+    </ul>
+    <p>For more details, please refer to the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+
+    <h2>3. Strict Handling of Health Connect Data</h2>
+    <p>The App's use of information received from Health Connect will adhere to the <a href="https://support.google.com/googleplay/android-developer/answer/9888170" target="_blank">Health Connect Permissions Policy</a>, including the Limited Use requirements.</p>
+    <ul>
+        <li><span class="important">We do not use data obtained from Health Connect for advertising, third-party sales, user identification, or any other marketing purposes.</span></li>
+    </ul>
+
+    <h2>4. Data Storage and Export</h2>
+    <p>The life logs created within the App (diaries, statistics, settings, etc.) are, in principle, <strong>stored locally on your device.</strong></p>
+    <ul>
+        <li>If you choose to use the "Backup (JSON Export)" feature, data will be written to a location you specify. Managing the security of these exported files is the user's responsibility.</li>
+    </ul>
+
+    <h2>5. Disclaimer</h2>
+    <p>The App is provided "as is." The developer shall not be liable for any trouble, loss, or damage resulting from the use of the App (including AI-generated results, data loss, or ad display). Users are encouraged to maintain their own backups of important data.</p>
+
+    <h2>6. Open Source Licenses</h2>
+    <p>The App utilizes various open-source libraries, including but not limited to:</p>
+    <ul>
+        <li>Android Jetpack (Compose, Room, DataStore, Health Connect, WorkManager, etc.)</li>
+        <li>Google Firebase SDK</li>
+        <li>Google Play Services (Ads, App Update, Review)</li>
+        <li>Google Media3 (ExoPlayer)</li>
+        <li>Google Generative AI SDK</li>
+        <li>Coil (Image Loading) / Gson</li>
+    </ul>
+
+    <h2>7. Contact Information</h2>
+    <p>If you have any questions about this policy, please contact us at:</p>
+    <p>Email: lifememory.keikei@gmail.com</p>
+    <p>Developer: keikei</p>
 
     <div class="footer">
-        <p>Revised: February 18, 2026</p>
+        <p>Last Revised: March 30, 2026</p>
         <p>&copy; 2026 LifeMemory</p>
     </div>
 
