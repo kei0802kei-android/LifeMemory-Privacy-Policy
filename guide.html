@@ -3,97 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeMemory使い方ガイド</title>
+    <title>LifeMemory 使い方ガイド</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; background-color: #f0f7f9; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-        header { text-align: center; padding: 30px 0; background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%); color: white; border-radius: 0 0 20px 20px; }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f7f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+            color: white;
+            border-radius: 0 0 20px 20px;
+        }
         h1 { margin: 0; font-size: 24px; }
         .update-date { font-size: 12px; opacity: 0.8; }
+        
         .section { margin-top: 30px; }
-        h2 { color: #5a7d9a; border-left: 5px solid #74EBD5; padding-left: 10px; font-size: 20px; }
-        .capture-container { text-align: center; margin: 20px 0; }
-        .capture-img { max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 4px solid #fff; }
-        .point-box { background-color: #f8fbff; border: 1px solid #e1eef6; border-radius: 10px; padding: 15px; margin-bottom: 20px; }
-        .point-title { font-weight: bold; color: #4a90e2; display: flex; align-items: center; }
-        .point-title::before { content: '💡'; margin-right: 8px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .card { background: #fff; border: 1px solid #eee; padding: 10px; border-radius: 8px; font-size: 13px; }
-        footer { text-align: center; padding: 40px 20px; font-size: 12px; color: #888; }
+        h2 {
+            color: #5a7d9a;
+            border-left: 5px solid #74EBD5;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+
+        .capture-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .capture-img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 4px solid #fff;
+        }
+
+        .point-box {
+            background-color: #f8fbff;
+            border: 1px solid #e1eef6;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .point-title {
+            font-weight: bold;
+            color: #4a90e2;
+            display: flex;
+            align-items: center;
+        }
+        .point-title::before {
+            content: '💡';
+            margin-right: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #888;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #9FACE6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>LifeMemory 使い方ガイド</h1>
-    <div class="update-date">最終更新：2026年2月18日</div>
+    <div class="update-date">最終更新：2026年3月</div>
 </header>
 
 <div class="container">
-    
+
+    <!-- [新規追加] はじめる前の準備 -->
     <div class="section">
         <h2>はじめる前の準備</h2>
-        <p>アプリの機能をフル活用するために、以下の設定をご確認ください。</p>
+        <p>LifeMemoryの機能をフル活用するために、以下の権限を許可してください。</p>
+        
         <div class="point-box">
-            <div class="point-title">ヘルスコネクトとの連携</div>
-            <p>「歩数」「睡眠」「体重」などを記録するために必要です。設定画面から「すべての権限」を許可にすると、Google Fitなど他のアプリのデータも自動で取り込めます。</p>
+            <div class="point-title">ヘルスコネクト連携</div>
+            <p>歩数、睡眠、体重データを取得するために必要です。設定画面で「すべての権限」を許可にすると、Google Fit等の他アプリのデータも自動で反映されます。</p>
         </div>
+
         <div class="point-box">
             <div class="point-title">使用状況へのアクセス</div>
-            <p>「エンタメ」カードで、どのアプリをどれくらい使ったかを表示するために必要です。Androidの設定画面で許可にしてください。</p>
+            <p>「どのアプリをどれくらい使ったか」を分析し、タイムラインに自動反映するために必要です。設定からLifeMemoryを探して許可してください。</p>
         </div>
     </div>
-
+    
     <div class="section">
         <h2>メイン画面の使い方</h2>
-        <p>あなたの「今日」がリアルタイムに再現されます。</p>
+        <p>アプリを開くと、あなたの「今日」がリアルタイムに再現されます。</p>
+        
         <div class="capture-container">
-            <img src="main_screen.png" alt="メイン画面" class="capture-img">
+            <img src="main_screen.png" alt="メイン画面キャプチャ" class="capture-img">
+            <p style="font-size: 12px; color: #666;">※画面は開発中のものです</p>
         </div>
+
         <div class="point-box">
             <div class="point-title">アバターが動く！</div>
-            <p>あなたが歩けばアバターも歩き、音楽を聴けばアバターもヘッドホンを装着します。あなたの行動とリンクして表情を変えます。</p>
+            <p>あなたが音楽を聴いていればアバターもヘッドホンをつけ、歩いていればアバターも歩き出します。あなたの行動とリンクして表情を変えます。</p>
         </div>
+
+        <div class="point-box">
+            <div class="point-title">24時間の活動グラフ</div>
+            <p>右上の円グラフは、1日の活動割合（睡眠、音楽、歩行、アプリ使用）を視覚的に表しています。何に時間を使ったか一目でわかります。</p>
+        </div>
+
         <div class="point-box">
             <div class="point-title">思い出タイムライン</div>
-            <p>中央のタイムラインを左右にスワイプすると、過去の時刻に戻れます。その時に撮った写真が「吹き出し」として飛び出します。</p>
+            <p>中央の帯（タイムライン）を左右にスワイプすると、過去の時刻に戻れます。その時に撮った写真が「吹き出し」として飛び出します。</p>
         </div>
     </div>
 
     <div class="section">
         <h2>アクティビティ・カード</h2>
-        <p>下のパネルをタップして、詳細データを確認しましょう。</p>
+        <p>下のパネルをタップすると、それぞれの詳細データを確認できます。</p>
         <div class="grid">
-            <div class="card"><strong>🔥 カロリー</strong><br>活動量から消費カロリーを推定。</div>
-            <div class="card"><strong>🏃 歩数</strong><br>Health Connectと連携し記録。</div>
-            <div class="card"><strong>⚖️ 体重</strong><br>変化をグラフ化してサポート。</div>
-            <div class="card"><strong>🌙 睡眠</strong><br>睡眠ステージを詳しく分析。</div>
-            <div class="card"><strong>📱 エンタメ</strong><br>アプリ使用時間を可視化。</div>
-            <div class="card"><strong>📖 日記</strong><br>AIが1日を振り返り代筆。</div>
+            <div class="card"><strong>🔥 カロリー</strong><br>活動量とプロフィールから消費カロリーを推定。目標摂取カロリーも表示。</div>
+            <div class="card"><strong>🏃 歩数</strong><br>Health Connectと連携し、1日の歩行距離や消費カロリーを記録。</div>
+            <div class="card"><strong>⚖️ 体重</strong><br>体重の変化をグラフ化。目標までの道のりをサポート。</div>
+            <div class="card"><strong>🌙 睡眠</strong><br>昨夜の睡眠ステージ（深い・浅い）を詳しく分析。</div>
+            <div class="card"><strong>📱 エンタメ</strong><br>どのアプリをどれくらい使ったか、デジタルウェルビーイングを確認。</div>
+            <div class="card"><strong>📖 日記</strong><br>Gemini AIがあなたの1日を振り返り、優しい言葉で日記を代筆。</div>
+            <div class="card"><strong>🏆 コレクション</strong><br>獲得した称号や、歴代のベスト記録（殿堂入り）を確認できます。</div>
+            <div class="card"><strong>📊 レポート</strong><br>AIによる分析と、1日の時間の使い方を詳しく振り返ります。</div>
         </div>
     </div>
 
+    <div class="section">
+        <h2>カスタムイベントの記録</h2>
+        <p>デジタルな記録だけでなく、あなたの「リアルな行動」もタイムラインに残せます。※タイムラインをタップで登録</p>
+        
+        <div class="capture-container">
+            <img src="event.png" alt="イベント登録画面" class="capture-img">
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">クイック選択でかんたん入力</div>
+            <p>食事、仕事、運動、旅行など、よくあるイベントはアイコンをタップするだけ。内容には好きな絵文字も使えます。</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">タイムラインを彩る</div>
+            <p>登録したイベントは、タイムライン上に帯として表示されます。スワイプして振り返る際、何時まで何をしていたかが直感的にわかります。</p>
+        </div>
+
+        <div class="point-box">
+            <div class="point-title">定期的なタスク</div>
+            <p>「仕事」や「睡眠」など毎日決まったルーチンは、「定期的なタスク」をONにすることで、翌日以降も自動でタイムラインに表示されます。</p>
+        </div>
+    </div>
+
+    <!-- [新規追加] AI日記のコツ -->
     <div class="section">
         <h2>AI日記を充実させるコツ</h2>
         <div class="point-box">
             <div class="point-title">小さなことでも「記録」する</div>
-            <p>「ランチを食べた」「散歩した」など、タイムラインをタップしてイベントを登録するほど、AIが書く日記がより具体的で感動的な内容になります。</p>
+            <p>「ランチを食べた」「散歩した」など、タイムラインにイベントを登録すればするほど、AIが書く日記の内容が具体的で感動的なものに変わります。あなたの「心の動き」をAIに教えてあげてください。</p>
         </div>
     </div>
 
+    <!-- [新規追加] バックアップ -->
     <div class="section">
-        <h2>データの保存とバックアップ</h2>
+        <h2>思い出をずっと残すために</h2>
         <div class="point-box">
-            <div class="point-title">データは端末内（ローカル）保存</div>
-            <p>日記の内容やヘルスケアデータが外部に漏れることはありません。プライバシーは完全に守られています。</p>
-        </div>
-        <div class="point-box">
-            <div class="point-title">バックアップ（JSON出力）</div>
-            <p>設定画面から記録をファイルとして書き出せます。機種変更の際や万が一のために、定期的な保存をお勧めします。</p>
+            <div class="point-title">バックアップ（エクスポート）</div>
+            <p>設定画面から、これまでの記録をJSON形式のファイルとして保存できます。機種変更の際や、万が一のために定期的にバックアップを取ることをお勧めします。</p>
         </div>
     </div>
 
 </div>
+
+    <div class="section" style="text-align: center;">
+        <p>過去の自分を振り返ることで、<br>新しい明日がもっと楽しくなる。</p>
+        <p><strong>LifeMemory</strong></p>
+    </div>
 
 <footer>
     &copy; 2026 LifeMemory<br>
