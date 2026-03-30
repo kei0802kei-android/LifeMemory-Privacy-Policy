@@ -7,55 +7,69 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
         h1 { border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
-        h2 { color: #4CAF50; margin-top: 30px; }
+        h2 { color: #4CAF50; margin-top: 30px; border-left: 5.px solid #4CAF50; padding-left: 10px; }
         p, li { font-size: 14px; }
-        .footer { margin-top: 50px; font-size: 12px; color: #777; }
+        .important { color: #d32f2f; fontWeight: bold; }
+        .footer { margin-top: 50px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
 
     <h1>プライバシーポリシー</h1>
-    <p>「LifeMemory」（以下「本アプリ」といいます）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。</p>
+    <p>「LifeMemory」（以下「本アプリ」といいます）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。本アプリを利用することで、ユーザーは本ポリシーに同意したものとみなされます。</p>
 
     <h2>1. 取得する情報および利用目的</h2>
     <p>本アプリは、以下の情報を取得し、それぞれの目的で利用します。</p>
     <ul>
-        <li><strong>アクティビティデータ（歩数・カロリー等）および睡眠データ:</strong> Health Connectより取得します。ユーザーの活動履歴をアプリ内で可視化し、ライフログとして表示するためにのみ利用します。</li>
-        <li><strong>メディアファイル（写真・動画）:</strong> 端末内のメディアを取得し、アプリ内の「思い出（吹き出し）」機能として表示するために利用します。</li>
-        <li><strong>アプリ利用統計情報:</strong> ユーザー自身のアプリ使用状況を分析し、ライフログの一部として表示するために利用します。</li>
+        <li><strong>ヘルスケアデータ（歩数・睡眠・体重・カロリー等）:</strong> Health Connectより取得します。ユーザーの活動履歴を可視化し、ライフログとして表示するためにのみ利用します。</li>
+        <li><strong>メディアファイル（写真・動画）:</strong> 端末内のメディアを取得し、アプリ内の日記機能や振り返り機能で表示するために利用します。</li>
+        <li><strong>アプリ利用統計情報:</strong> 端末内の「使用状況アクセス」権限に基づき取得します。ユーザー自身のアプリ使用状況を分析し、ライフログの一部として表示するために利用します。</li>
+        <li><strong>AI処理用データ:</strong> AI（Gemini）による分析・日記生成機能を利用する際、ユーザーが入力したテキストや統計データの一部がクラウド上で処理されます。</li>
     </ul>
 
-    <h2>2. Health Connect データの取り扱いについて</h2>
-    <p>本アプリは、Health Connectから取得した情報を、Health Connectのアクセス許可ポリシー（<a href="https://support.google.com/googleplay/android-developer/answer/9888170" target="_blank">限定的な使用要件</a>を含む）に従って使用します。</p>
+    <h2>2. 第三者サービスによる情報の取得と利用</h2>
+    <p>本アプリの品質向上および広告配信のため、以下の第三者サービスを利用しています。これらのサービスは、クッキーやデバイス識別子を利用して情報を収集する場合があります。</p>
+    
     <ul>
-        <li>取得したデータは、ユーザーへの機能提供以外の目的（広告配信や第三者への販売等）には一切使用しません。</li>
+        <li><strong>Google AdMob（広告配信）:</strong> 広告の表示およびパーソナライズのために広告ID等の情報を利用します。</li>
+        <li><strong>Firebase Analytics / Crashlytics（分析・改善）:</strong> アプリの利用状況の統計およびクラッシュ時の診断情報を匿名で収集し、アプリの改善に役立てます。</li>
+        <li><strong>Google Generative AI SDK (Gemini):</strong> AIによるコンテンツ生成のため、プロンプトとして送信された情報を処理します。</li>
     </ul>
+    <p>各サービスのプライバシーポリシーについては、Googleの<a href="https://policies.google.com/privacy" target="_blank">プライバシーポリシー</a>をご確認ください。</p>
 
-    <h2>3. データの保存と第三者提供</h2>
-    <p>本アプリで取得したすべてのデータ（ヘルスケアデータ、写真、利用統計等）は、<strong>ユーザーの端末内（ローカル）にのみ保存されます。</strong> 当方が管理する外部サーバーへの送信や、第三者への提供は一切行いません。</p>
-
-    <h2>4. 免責事項</h2>
-    <p>本アプリの利用により発生した何らかのトラブルや損失、損害に対して、開発者は一切の責任を負いません。本アプリは現状有姿で提供されるものです。</p>
-
-    <h2>5. オープンソースライセンス</h2>
-    <p>本アプリでは、以下のオープンソースライブラリを使用しています。各ライブラリのライセンスに基づき、著作権表示および許諾表示を行います。</p>
+    <h2>3. Health Connect データの厳格な取り扱い</h2>
+    <p>本アプリは、Health Connectから取得した情報を、Googleの「<a href="https://support.google.com/googleplay/android-developer/answer/9888170" target="_blank">限定的な使用要件</a>」に従って取り扱います。</p>
     <ul>
-        <li><strong>Android Jetpack (Compose, Room, DataStore, Health Connect, etc.):</strong> Apache License 2.0</li>
-        <li><strong>Google Firebase (Analytics, Crashlytics):</strong> Apache License 2.0</li>
-        <li><strong>Google Play Services (Ads, Review, App Update):</strong> Android Software Development Kit License</li>
-        <li><strong>Google Media3 (ExoPlayer):</strong> Apache License 2.0</li>
-        <li><strong>Google Generative AI SDK (Gemini):</strong> Apache License 2.0</li>
-        <li><strong>Coil (Image Loading):</strong> Apache License 2.0</li>
-        <li><strong>Gson:</strong> Apache License 2.0</li>
+        <li><span class="important">Health Connectより取得したデータを、広告配信や第三者への販売、ユーザーの特定、その他のマーケティング目的で利用することはありません。</span></li>
     </ul>
 
-    <h2>6. お問い合わせ</h2>
+    <h2>4. データの保存とエクスポート</h2>
+    <p>本アプリで作成されたライフログ（日記、統計、設定等）は、原則として<strong>ユーザーの端末内（ローカル）に保存されます。</strong></p>
+    <ul>
+        <li>ユーザーが自ら「バックアップ（JSONエクスポート）」機能を利用した場合、データはユーザーが指定した保存先にファイルとして書き出されます。このファイルの管理はユーザー自身の責任において行ってください。</li>
+    </ul>
+
+    <h2>5. 免責事項</h2>
+    <p>本アプリは現状有姿で提供されます。本アプリの利用（AIによる生成結果、データの消失、広告の表示等を含む）により発生した何らかのトラブルや損失、損害に対して、開発者は一切の責任を負いません。重要なデータのバックアップはユーザー自身で行ってください。</p>
+
+    <h2>6. オープンソースライセンス</h2>
+    <p>本アプリでは、以下の主要なオープンソースライブラリを使用しています。</p>
+    <ul>
+        <li>Android Jetpack (Compose, Room, DataStore, Health Connect, WorkManager, etc.)</li>
+        <li>Google Firebase SDK</li>
+        <li>Google Play Services (Ads, App Update, Review)</li>
+        <li>Google Media3 (ExoPlayer)</li>
+        <li>Google Generative AI SDK</li>
+        <li>Coil (Image Loading) / Gson</li>
+    </ul>
+
+    <h2>7. お問い合わせ</h2>
     <p>本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
-    <p>連絡先メールアドレス：[ lifememory.keikei@gmail.com ]</p>
-    <p>開発者名：[ けいけい ]</p>
+    <p>連絡先メールアドレス：lifememory.keikei@gmail.com</p>
+    <p>開発者名：けいけい</p>
 
     <div class="footer">
-        <p>改定日：2026年02月18日</p>
+        <p>改定日：2026年03月30日（AI機能および第三者サービスに関する記述を明確化）</p>
         <p>&copy; 2026 LifeMemory</p>
     </div>
 
