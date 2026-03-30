@@ -3,186 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeMemory 使い方ガイド</title>
+    <title>LifeMemory プライバシーポリシー</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f0f7f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-        }
-        header {
-            text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
-            color: white;
-            border-radius: 0 0 20px 20px;
-        }
-        h1 { margin: 0; font-size: 24px; }
-        .update-date { font-size: 12px; opacity: 0.8; }
-        
-        .section { margin-top: 30px; }
-        h2 {
-            color: #5a7d9a;
-            border-left: 5px solid #74EBD5;
-            padding-left: 10px;
-            font-size: 20px;
-        }
-
-        .capture-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .capture-img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 4px solid #fff;
-        }
-
-        .point-box {
-            background-color: #f8fbff;
-            border: 1px solid #e1eef6;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        .point-title {
-            font-weight: bold;
-            color: #4a90e2;
-            display: flex;
-            align-items: center;
-        }
-        .point-title::before {
-            content: '💡';
-            margin-right: 8px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .card {
-            background: #fff;
-            border: 1px solid #eee;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 12px;
-            color: #888;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #9FACE6;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-        }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
+        h2 { color: #4CAF50; margin-top: 30px; border-left: 5px solid #4CAF50; padding-left: 10px; }
+        p, li { font-size: 14px; }
+        .important { color: #d32f2f; font-weight: bold; }
+        .footer { margin-top: 50px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>LifeMemory 使い方ガイド</h1>
-    <div class="update-date">最終更新：2026年2月</div>
-</header>
+    <h1>プライバシーポリシー</h1>
+    <p>「LifeMemory」（以下「本アプリ」といいます）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。本アプリを利用することで、ユーザーは本ポリシーに同意したものとみなされます。</p>
 
-<div class="container">
+    <h2>1. 取得する情報および利用目的</h2>
+    <p>本アプリは、以下の情報を取得し、それぞれの目的で利用します。</p>
+    <ul>
+        <li><strong>ヘルスケアデータ（歩数・睡眠・体重・カロリー等）:</strong> Health Connectより取得します。ユーザーの活動履歴を可視化し、ライフログとして表示するためにのみ利用します。</li>
+        <li><strong>メディアファイル（写真・動画）:</strong> 端末内のメディアを取得し、アプリ内の日記機能や振り返り機能で表示するために利用します。</li>
+        <li><strong>アプリ利用統計情報:</strong> 端末内の「使用状況アクセス」権限に基づき取得します。ユーザー自身のアプリ使用状況を分析し、ライフログの一部として表示するために利用します。</li>
+        <li><strong>AI処理用データ:</strong> AI（Gemini）による分析・日記生成機能を利用する際、ユーザーが入力したテキストや統計データの一部がクラウド上で処理されます。</li>
+    </ul>
+
+    <h2>2. 第三者サービスによる情報の取得と利用</h2>
+    <p>本アプリの品質向上および広告配信のため、以下の第三者サービスを利用しています。これらのサービスは、クッキーやデバイス識別子を利用して情報を収集する場合があります。</p>
     
-    <div class="section">
-        <h2>メイン画面の使い方</h2>
-        <p>アプリを開くと、あなたの「今日」がリアルタイムに再現されます。</p>
-        
-        <div class="capture-container">
-            <!-- ここに画像をアップロードして、srcを書き換えてください -->
-            <img src="main_screen.png" alt="メイン画面キャプチャ" class="capture-img">
-            <p style="font-size: 12px; color: #666;">※画面は開発中のものです</p>
-        </div>
+    <ul>
+        <li><strong>Google AdMob（広告配信）:</strong> 広告の表示およびパーソナライズのために広告ID等の情報を利用します。</li>
+        <li><strong>Firebase Analytics / Crashlytics（分析・改善）:</strong> アプリの利用状況の統計およびクラッシュ時の診断情報を匿名で収集し、アプリの改善に役立てます。</li>
+        <li><strong>Google Generative AI SDK (Gemini):</strong> AIによるコンテンツ生成のため、プロンプトとして送信された情報を処理します。</li>
+    </ul>
+    <p>各サービスのプライバシーポリシーについては、Googleの<a href="https://policies.google.com/privacy" target="_blank">プライバシーポリシー</a>をご確認ください。</p>
 
-        <div class="point-box">
-            <div class="point-title">アバターが動く！</div>
-            <p>あなたが音楽を聴いていればアバターもヘッドホンをつけ、歩いていればアバターも歩き出します。あなたの行動とリンクして表情を変えます。</p>
-        </div>
+    <h2>3. Health Connect データの厳格な取り扱い</h2>
+    <p>本アプリは、Health Connectから取得した情報を、Googleの「<a href="https://support.google.com/googleplay/android-developer/answer/9888170" target="_blank">限定的な使用要件</a>」に従って取り扱います。</p>
+    <ul>
+        <li><span class="important">Health Connectより取得したデータを、広告配信や第三者への販売、ユーザーの特定、その他のマーケティング目的で利用することはありません。</span></li>
+    </ul>
 
-        <div class="point-box">
-            <div class="point-title">24時間の活動グラフ</div>
-            <p>右上の円グラフは、1日の活動割合（睡眠、音楽、歩行、アプリ使用）を視覚的に表しています。何に時間を使ったか一目でわかります。</p>
-        </div>
+    <h2>4. データの保存とエクスポート</h2>
+    <p>本アプリで作成されたライフログ（日記、統計、設定等）は、原則として<strong>ユーザーの端末内（ローカル）に保存されます。</strong></p>
+    <ul>
+        <li>ユーザーが自ら「バックアップ（JSONエクスポート）」機能を利用した場合、データはユーザーが指定した保存先にファイルとして書き出されます。このファイルの管理はユーザー自身の責任において行ってください。</li>
+    </ul>
 
-        <div class="point-box">
-            <div class="point-title">思い出タイムライン</div>
-            <p>中央の帯（タイムライン）を左右にスワイプすると、過去の時刻に戻れます。その時に撮った写真が「吹き出し」として飛び出します。</p>
-        </div>
+    <h2>5. 免責事項</h2>
+    <p>本アプリは現状有姿で提供されます。本アプリの利用（AIによる生成結果、データの消失、広告の表示等を含む）により発生した何らかのトラブルや損失、損害に対して、開発者は一切の責任を負いません。重要なデータのバックアップはユーザー自身で行ってください。</p>
+
+    <h2>6. オープンソースライセンス</h2>
+    <p>本アプリでは、主要なオープンソースライブラリ（Android Jetpack, Firebase, Media3, Gemini SDK等）を使用しています。各ライセンスはApache License 2.0等に基づきます。</p>
+
+    <h2>7. お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
+    <p>連絡先メールアドレス：lifememory.keikei@gmail.com</p>
+    <p>開発者名：けいけい</p>
+
+    <div class="footer">
+        <p>改定日：2026年03月30日</p>
+        <p>&copy; 2026 LifeMemory</p>
     </div>
-
-    <div class="section">
-        <h2>アクティビティ・カード</h2>
-        <p>下のパネルをタップすると、それぞれの詳細データを確認できます。</p>
-        <div class="grid">
-            <div class="card"><strong>🔥 カロリー</strong><br>活動量とプロフィールから消費カロリーを推定。目標摂取カロリーも表示。</div>
-            <div class="card"><strong>🏃 歩数</strong><br>Health Connectと連携し、1日の歩行距離や消費カロリーを記録。</div>
-            <div class="card"><strong>⚖️ 体重</strong><br>体重の変化をグラフ化。目標までの道のりをサポート。</div>
-            <div class="card"><strong>🌙 睡眠</strong><br>昨夜の睡眠ステージ（深い・浅い）を詳しく分析。</div>
-            <div class="card"><strong>📱 エンタメ</strong><br>どのアプリをどれくらい使ったか、デジタルウェルビーイングを確認。</div>
-            <div class="card"><strong>📖 日記</strong><br>Gemini AIがあなたの1日を振り返り、優しい言葉で日記を代筆。</div>
-            <div class="card"><strong>🏆 コレクション</strong><br>獲得した称号や、歴代のベスト記録（殿堂入り）を確認できます。</div>
-            <div class="card"><strong>📊 レポート</strong><br>AIによる分析と、1日の時間の使い方を詳しく振り返ります。</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>カスタムイベントの記録</h2>
-        <p>デジタルな記録だけでなく、あなたの「リアルな行動」もタイムラインに残せます。※タイムラインをタップで登録</p>
-        
-        <div class="capture-container">
-            <img src="event.png" alt="イベント登録画面" class="capture-img">
-        </div>
-
-        <div class="point-box">
-            <div class="point-title">クイック選択でかんたん入力</div>
-            <p>食事、仕事、運動、旅行など、よくあるイベントはアイコンをタップするだけ。内容には好きな絵文字も使えます。</p>
-        </div>
-
-        <div class="point-box">
-            <div class="point-title">タイムラインを彩る</div>
-            <p>登録したイベントは、タイムライン上に指定したカラーの帯として表示されます。スワイプして振り返る際、何時まで何をしていたかが直感的にわかります。</p>
-        </div>
-
-        <div class="point-box">
-            <div class="point-title">定期的なタスク</div>
-            <p>「仕事」や「睡眠」など、毎日決まった時間のルーチンは「定期的なタスク」をONにすることで、翌日以降も自動でタイムラインに表示されます。</p>
-        </div>
-    </div>
-
-</div>
-
-    <div class="section" style="text-align: center;">
-        <p>過去の自分を振り返ることで、<br>新しい明日がもっと楽しくなる。</p>
-        <p><strong>LifeMemory</strong></p>
-    </div>
-
-<footer>
-    &copy; 2026 kei0802kei-android<br>
-    <a href="https://kei0802kei-android.github.io/LifeMemory-Privacy-Policy/" style="color: #888;">プライバシーポリシー</a>
-</footer>
 
 </body>
 </html>
