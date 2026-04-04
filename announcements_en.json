@@ -1,17 +1,9 @@
 [
   {
-    "id": "20260327_12",
-    "title": "Notification of Test Compensation",
-    "body": "AI Credits have been granted as compensation for testing.",
-    "date": "2026/03/27",
-    "category": "info",
-    "giftCredits": 1
-  },
-  {
-    "id": "20260311_01",
-    "title": "Beta Version Released",
-    "body": "The beta version for closed testing has been released.",
-    "date": "2026/03/11",
+    "id": "20260404_01",
+    "title": "Full Version Released",
+    "body": "The full version of the app has been officially released.",
+    "date": "2026/04/04",
     "category": "info",
     "url": ""
   }
