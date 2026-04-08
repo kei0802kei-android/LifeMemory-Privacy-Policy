@@ -7,9 +7,9 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
         h1 { border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
-        h2 { color: #4CAF50; margin-top: 30px; border-left: 5.px solid #4CAF50; padding-left: 10px; }
+        h2 { color: #4CAF50; margin-top: 30px; border-left: 5px solid #4CAF50; padding-left: 10px; }
         p, li { font-size: 14px; }
-        .important { color: #d32f2f; fontWeight: bold; }
+        .important { color: #d32f2f; font-weight: bold; }
         .footer { margin-top: 50px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
@@ -43,33 +43,25 @@
         <li><span class="important">Health Connectより取得したデータを、広告配信や第三者への販売、ユーザーの特定、その他のマーケティング目的で利用することはありません。</span></li>
     </ul>
 
-    <h2>4. データの保存とエクスポート</h2>
-    <p>本アプリで作成されたライフログ（日記、統計、設定等）は、原則として<strong>ユーザーの端末内（ローカル）に保存されます。</strong></p>
+    <h2>4. データの保持と削除</h2>
+    <p>本アプリは、ユーザーデータの保護と透明性を確保するため、以下の通りデータの保持と削除を規定します。</p>
     <ul>
-        <li>ユーザーが自ら「バックアップ（JSONエクスポート）」機能を利用した場合、データはユーザーが指定した保存先にファイルとして書き出されます。このファイルの管理はユーザー自身の責任において行ってください。</li>
+        <li><strong>データの保持期間:</strong> 本アプリで作成されたライフログ（日記、統計、設定等）は、原則としてユーザーの端末内（ローカル）にのみ保存されます。これらのデータは、ユーザーが本アプリを利用し続ける限り保持されます。</li>
+        <li><strong>データの削除方法（手動）:</strong> ユーザーは、アプリ内の各詳細画面から、作成した日記やカスタムイベントを個別に削除することができます。</li>
+        <li><strong>データの全削除方法:</strong> ユーザーが本アプリをアンインストールすることで、端末内に保存されたすべてのローカルデータは即座に、かつ完全に削除されます。</li>
+        <li><strong>外部サービス上のデータ:</strong> AI（Gemini）処理のために送信されたデータは、生成処理が完了した後は本アプリのサーバー等に保持されることはありません。FirebaseやAdMobで収集される匿名の統計情報については、各サービスの規定に基づき管理・削除されます。</li>
     </ul>
 
     <h2>5. 免責事項</h2>
     <p>本アプリは現状有姿で提供されます。本アプリの利用（AIによる生成結果、データの消失、広告の表示等を含む）により発生した何らかのトラブルや損失、損害に対して、開発者は一切の責任を負いません。重要なデータのバックアップはユーザー自身で行ってください。</p>
 
-    <h2>6. オープンソースライセンス</h2>
-    <p>本アプリでは、以下の主要なオープンソースライブラリを使用しています。</p>
-    <ul>
-        <li>Android Jetpack (Compose, Room, DataStore, Health Connect, WorkManager, etc.)</li>
-        <li>Google Firebase SDK</li>
-        <li>Google Play Services (Ads, App Update, Review)</li>
-        <li>Google Media3 (ExoPlayer)</li>
-        <li>Google Generative AI SDK</li>
-        <li>Coil (Image Loading) / Gson</li>
-    </ul>
-
-    <h2>7. お問い合わせ</h2>
-    <p>本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
+    <h2>6. お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせや、データの取り扱いに関するご質問は、以下の連絡先までお願いいたします。</p>
     <p>連絡先メールアドレス：lifememory.keikei@gmail.com</p>
     <p>開発者名：けいけい</p>
 
     <div class="footer">
-        <p>改定日：2026年03月30日（AI機能および第三者サービスに関する記述を明確化）</p>
+        <p>改定日：2026年04月08日（データの保持および削除に関する記述を明文化）</p>
         <p>&copy; 2026 LifeMemory</p>
     </div>
 
