@@ -6,5 +6,13 @@
     "date": "2026/04/07",
     "category": "info",
     "url": ""
+  },
+  {
+    "id": "20260521_01",
+    "title": "Security enhancements for AI features",
+    "body": "Migrated the AI engine to a more secure infrastructure (Firebase Vertex AI)",
+    "date": "2026/05/21",
+    "category": "info",
+    "url": ""
   }
 ]
