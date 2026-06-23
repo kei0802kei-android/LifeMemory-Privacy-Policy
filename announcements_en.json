@@ -1,5 +1,13 @@
 [
   {
+    "id": "20260623_01",
+    "title": "Enhanced Privacy Protection",
+    "body": "In compliance with Google's enhanced privacy protection policies, full access to photos and videos has been removed. We are currently developing the *Media Sync Settings* feature to allow images and videos to be displayed as they were before.",
+    "date": "2026/06/23",
+    "category": "important",
+    "url": ""
+  },
+  {
     "id": "20260521_01",
     "title": "Security enhancements for AI features",
     "body": "Migrated the AI engine to a more secure infrastructure (Firebase Vertex AI)",
