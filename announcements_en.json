@@ -1,5 +1,14 @@
 [
   {
+    "id": "20260908_gift",
+    "title": "Special AI Credit Gift",
+    "body": "Thank you for using LifeMemory! We've gifted you 3 AI credits as part of a special trial. Try using them to generate your diaries or analysis reports with AI! (Note: If you already have 8 or more credits, please use them first and then reopen this announcement to claim your gift.)",
+    "date": "2026-09-08",
+    "category": "info",
+    "giftCredits": 3,
+    "targetIds": null
+  },
+  {
     "id": "20260624_01",
     "title": "Enhanced Privacy Protection",
     "body": "In compliance with Google's enhanced privacy protection policies, full access to photos and videos has been removed. To allow images and videos to be displayed as they were before, we have implemented the *Media Sync Settings* feature in the settings screen.",
