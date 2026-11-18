@@ -1,5 +1,13 @@
 [
    {
+     "id": "20261118_01",
+     "title": "[Feature Restoration] Step Ranking & Friend Features Restored",
+     "body": "Thank you for using LifeMemory.\nThe Step Ranking and Friend features, which were temporarily unavailable, have now been fully restored.\n*Please note: Due to the server migration, avatar images and friend connections have been reset. We apologize for the inconvenience, but please re-upload your avatar image and re-add your friends from the Profile screen.\nWe sincerely apologize for any inconvenience caused during this period.",
+     "date": "2026/11/18",
+     "category": "info",
+     "url": ""
+   },   
+   {
     "id": "20261021_02",
     "title": "【Service Disruption Update】",
     "body": "The AI diary/report generation features have been restored. However, the remaining features, Step Ranking and Friends (image upload), are still unavailable.",
